@@ -118,9 +118,11 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-function uniq(array, callback){
-  
-}
+function uniq (arr, cb){
+  let deDuplicated = arr.filter(function(cur, ind, arr){
+  return arr.indexOf(cur) == ind});
+  cb(deDuplicated)
+} 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -137,7 +139,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each(array, callback){
+  for (i = 0; i < array.length; i++){
+  callback(array[i], i);
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
